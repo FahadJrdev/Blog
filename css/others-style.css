@@ -1,0 +1,55 @@
+.main-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 0.3fr 1.2fr 0.3fr 1.2fr 1.2fr 1.2fr 0.4fr 0.5fr 0.8fr;
+    grid-template-areas: "main main main main main" "topic-right topic-right topic-right topic-right topic-right" "content1 content1 content2 content2 content2" "topic-left topic-left topic-left topic-left topic-left" "content3 content3 content4 content4 sidebar-right" "content5 content5 content6 content6 sidebar-right" "content7 content7 content8 content8 sidebar-right" "previous-page previous-page next-page next-page sidebar-right" "ads ads ads ads sidebar-right" "footer footer footer footer footer";
+    grid-gap: 0.2rem;
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.main-container .previous-page {
+    grid-area: previous-page;
+}
+
+.main-container .content.previous-page a {
+    text-decoration: none;
+    background-color: var(--bg-primary-color);
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    -webkit-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+}
+
+.main-container .content.previous-page a:hover {
+    color: var(--text-color-white);
+    background-color: var(--primary-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr 0.5fr;
+        grid-template-rows: 2.2fr 0.3 1.2fr 1.2fr 0.3fr 1.2fr 1.2fr 1.2fr 0.4fr 0.5fr 1fr;
+        grid-template-areas: "main main main" "topic-left topic-left sidebar-right" "content1 content1 sidebar-right" "content2 content2 sidebar-right" "topic-right topic-right sidebar-right" "content3 content4 sidebar-right" "content5 content6 sidebar-right" "content7 content8 sidebar-right" "previous-page  next-page sidebar-right" "ads ads sidebar-right" "footer footer footer";
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2.2fr 0.6fr 0.3 1.2fr 1.2fr 0.3fr 1.2fr 1.2fr 0.6fr 1.2fr 1.2fr 1.2fr 1.2fr 0.4fr 0.4fr 0.5fr 1fr;
+        grid-template-areas: "main" "sidebar-right" "topic-left" "content1" "content2" "topic-right" "content3" "content4" "content5" "content6" "content7" "content8" "next-page" "previous-page" "ads" "footer";
+        margin: 0 10px;
+    }
+}
